@@ -12,6 +12,10 @@ and, ✔️ or ❌ shows whether the Product has been featured or not.
 
 I hope you all like this tool and if you have any feedback please comment it below. Thanks! 😺
 
+# Screenshots
+
+![](https://i.imgur.com/JpgS0GD.png)
+![](https://i.imgur.com/0MQb7vB.png)
 
 # Installing this Chrome Extension
 
