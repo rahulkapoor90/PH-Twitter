@@ -21,4 +21,4 @@ I hope you all like this tool and if you have any feedback please comment it bel
 1. Enable `Developer mode` by checking the checkbox in the upper-right corner.
 1. Click on the button labelled `Load unpacked extension...`.
 1. Select the directory where you cloned this repo to.
-1. Visit Facebook!
+1. Visit Twitter!
