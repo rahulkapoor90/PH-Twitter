@@ -17,9 +17,14 @@ const producthunt = function() {
       el.insertAdjacentHTML('afterend', loading);
       var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
-            if (request.readyState === 4) {
+          var ratelimit = request.getResponseHeader("X-Rate-Limit-Remaining");
+          console.log(ratelimit);
+          if(ratelimit == 0){
+
+            for (let el of document.querySelectorAll('.loading')) el.innerHTML = 'Wait for 15 Min';
+          }
+            else if (request.readyState === 4) {
                 if (request.status === 200) {
-                    var ratelimit = request.getResponseHeader("X-Rate-Limit-Remaining");
                     if(ratelimit == 200){
                     chrome.runtime.sendMessage({"type": "ratelimit", "data": "rahul"});
                   }
