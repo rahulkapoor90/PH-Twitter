@@ -1,5 +1,7 @@
 # PH Twitter
 
+![](https://i.imgur.com/WIT8xwM.png)
+
 Hello Product Hunt!
 
 Most of my time over at Twitter is spent finding new products share by Product Hunt or by other makers/hunters such as
@@ -10,12 +12,7 @@ Here's what the box contains:
 ✍ shows the total comments.
 and, ✔️ or ❌ shows whether the Product has been featured or not.
 
-I hope you all like this tool and if you have any feedback please comment it below. Thanks! 😺
-
-# Screenshots
-
-![](https://i.imgur.com/JpgS0GD.png)
-![](https://i.imgur.com/0MQb7vB.png)
+I hope you all like this tool. Thanks! 😺
 
 # Installing this Chrome Extension
 
