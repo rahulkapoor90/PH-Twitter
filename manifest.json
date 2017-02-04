@@ -1,6 +1,6 @@
 {
-  "name": "PH Twitter",
-  "version": "0.0.2",
+  "name": "Product Hunt Twitter",
+  "version": "0.0.4",
   "author": "Rahul Kapoor",
   "manifest_version": 2,
   "description": "Get Product Hunt stats right on your Twitter timeline.",
@@ -18,10 +18,6 @@
       "38": "logo48.png"
     }
   },
-  "options_ui": {
-      "chrome_style": true,
-      "page": "options.html"
-   },
   "icons": {
      "128": "logo128.png",
      "16": "logo16.png",
@@ -32,7 +28,7 @@
     {
         "matches": ["https://twitter.com/*"],
         "css": ["PHstyle.css"],
-        "js" : [ "twitter.js"],
+        "js" : [ "jquery.min.js","twitter.js"],
         "run_at" : "document_idle",
         "all_frames" : false
     }

@@ -1,5 +1,36 @@
-const producthunt = function() {
+key = "INSERT_KEY_HERE"
+secret = "INSERT_SECRET_HERE"
 
+var base_url = "https://api.producthunt.com/v1/"
+var token_url = base_url +"oauth/token"
+var today_post_url = base_url + "posts"
+
+
+function get_token(){
+  var token = '';
+
+  $.ajax({
+    url: token_url,
+    type: "POST",
+    async: false,
+    header: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    data: {
+        "client_id": key,
+        "client_secret": secret,
+        "grant_type": 'client_credentials'
+      },
+    success: (function(res) {
+        token = res.access_token;
+    })
+  });
+
+    return (token);
+}
+var token = get_token();
+const producthunt = function() {
   const images = [...document.getElementsByClassName('js-tweet-text-container')];
 
   images.forEach(function(el) {
@@ -18,7 +49,6 @@ const producthunt = function() {
       var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
           var ratelimit = request.getResponseHeader("X-Rate-Limit-Remaining");
-          console.log(ratelimit);
           if(ratelimit == 0){
 
             for (let el of document.querySelectorAll('.loading')) el.innerHTML = 'Wait for 15 Min';
@@ -54,29 +84,14 @@ const producthunt = function() {
       request.open("GET", "https://api.producthunt.com/v1/posts/all?search%5Bslug%5D="+productname , true);
       request.setRequestHeader("Accept", "application/json");
       request.setRequestHeader("Content-Type", "application/json");
-      chrome.storage.sync.get({
-    phtoken : ""
-  }, function(items) {
-     var token = items.phtoken;
-     if(token != ''){
       request.setRequestHeader("Authorization", "Bearer "+token);
       request.send();
-    }
-      });
     }
   }
 
   });
 
 };
-chrome.storage.sync.get({
-phtoken : ""
-}, function(items) {
-var token = items.phtoken;
-if(token==''){
- chrome.runtime.sendMessage({"type": "gettoken", "data": "rahul"});
-}
-});
 
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
