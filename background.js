@@ -35,18 +35,11 @@ var gettoken = function(data){
 }
 
 function install_notice() {
-    if (localStorage.getItem('install_time'))
-        return;
-
-    var now = new Date().getTime();
-    localStorage.setItem('install_time', now);
-    var options = chrome.extension.getURL('options.html');
-    chrome.tabs.create({url: options});
 var opt = {
   type: "basic",
   title: "Hello Friend!",
-  message: "Thank You for installing PH Twitter. In order to Work enter Access Token here.",
-  iconUrl: chrome.extension.getURL('logo128.png')
+  message: "Thank You for installing Product Hunt Twitter.",
+  iconUrl: chrome.extension.getURL('logo64.png')
 }
     audioNotification();
     chrome.notifications.create(opt);
