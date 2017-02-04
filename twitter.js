@@ -30,8 +30,8 @@ function get_token(){
     return (token);
 }
 var token = get_token();
-const producthunt = function() {
-  const images = [...document.getElementsByClassName('js-tweet-text-container')];
+const producthunt = function(node) {
+  const images = [...node.getElementsByClassName('js-tweet-text-container')];
 
   images.forEach(function(el) {
     var productname,total_votes;
@@ -94,13 +94,17 @@ const producthunt = function() {
 };
 
 const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        producthunt();
-    });
+  mutations.forEach(function(mutation) {
+  mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) { // ELEMENT_NODE
+                producthunt(node);
+            }
+        });
+        });
 });
 
-const config = { attributes: true, childList: true, characterData: false }
+const config = { attributes: false, childList: true, characterData: false, subtree: true }
 
 observer.observe(document.body, config);
 
-producthunt();
+producthunt(document.body);
