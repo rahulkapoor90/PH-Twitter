@@ -1,7 +1,7 @@
 .producthunt{
 position:absolute;
 top:30px;
-right:10px;
+right:40px;
 padding:5px;
 font-size:12.5px;
 line-height:1.8;
@@ -12,7 +12,7 @@ border-radius:15px;
 .loading{
 position:absolute;
 top:30px;
-right:10px;
+right:40px;
 padding:5px;
 font-size:12.5px;
 line-height:1.8;
