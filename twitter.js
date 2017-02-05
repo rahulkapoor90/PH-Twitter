@@ -62,7 +62,13 @@ const producthunt = function(node) {
                     total_votes = data.posts[0].votes_count;
                     var featured = data.posts[0].featured;
                     var comments = data.posts[0].comments_count;
-                    var fe,vot;
+                    var makers = data.posts[0].maker_inside;
+                    var hunter = data.posts[0].user.twitter_username;
+                    var fe,vot,make;
+                    if(makers == true){
+                      make = data.posts[0].makers.length;
+                    }
+                    else {make = "no maker"}
                     if(total_votes > 100){
                       vot = "💯";
                     }
@@ -76,7 +82,7 @@ const producthunt = function(node) {
                       fe = "❌";
                     }
                     for (let el of document.querySelectorAll('.loading')) el.style.visibility = 'hidden';
-                    let html = "<ul class='producthunt'>"+vot+" "+total_votes+" ✍"+comments+" "+fe+"</ul>";
+                    let html = "<br><div class='js-tweet-text-container'><p class='TweetTextSize TweetTextSize--18px js-tweet-text tweet-text'>"+vot+" "+total_votes+" ✍ "+comments+" "+fe+"👨‍👨‍👦‍👦 "+make+" 🏆 <a href='http://twitter.com/"+hunter+"'>@"+hunter+"</a></p></div>";
                       el.insertAdjacentHTML('afterend', html);
                 }
             }
