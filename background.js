@@ -38,7 +38,7 @@ function install_notice() {
 var opt = {
   type: "basic",
   title: "Hello Friend!",
-  message: "Thank You for installing Product Hunt Tweets.",
+  message: "Thank You for installing Product Hunt Twitter.",
   iconUrl: chrome.extension.getURL('logo64.png')
 }
     audioNotification();
