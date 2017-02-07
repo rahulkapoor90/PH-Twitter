@@ -1,5 +1,5 @@
-key = "41696c40f269771ef773aebeb0d53975bae68c0124ad8af4b853ce90965d0c04"
-secret = "6eb789f3f2fff356e0a84e31aa3fbd82fcd019edd8dcf33808157d0746ebaa04"
+key = "INSERT_KEY_HERE"
+secret = "INSERT_SECRET_HERE"
 
 var base_url = "https://api.producthunt.com/v1/"
 var token_url = base_url + "oauth/token"
